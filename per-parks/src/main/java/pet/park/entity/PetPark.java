@@ -1,5 +1,7 @@
 package pet.park.entity;
 
+
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,11 +22,12 @@ import lombok.ToString;
 @Entity
 @Data
 public class PetPark {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long petParkId;
-	private String petParlNAme;
-	private String direction;
+	private String petParkName;
+	private String directions;
 	private String stateOrProvince;
 	private String country;
 
@@ -44,4 +47,7 @@ public class PetPark {
 	joinColumns = @JoinColumn(name = "pet_park_id"),
 	inverseJoinColumns = @JoinColumn(name = "entity_id" ))
 	private Set<Amenity> amenities = new HashSet<>();
+
+	
+	
 }

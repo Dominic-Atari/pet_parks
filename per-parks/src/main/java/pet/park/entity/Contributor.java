@@ -22,11 +22,11 @@ public class Contributor {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long ContributorId;
-	private String ContributorName;
+	private Long contributorId;
+	private String contributorName;
 	
 	@Column(unique = true)
-	private String ContributorEmail;
+	private String contributorEmail;
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude

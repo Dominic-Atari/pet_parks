@@ -6,10 +6,10 @@ spring:
 
    jpa:
       hibernate:
-         ddl-auto: create
+         ddl-auto: update #update or create#
       show-sql: true
       defer-datasource-initialization: true
 
    sql:
       init:
-         mode: always
+         mode: always #always or never#
