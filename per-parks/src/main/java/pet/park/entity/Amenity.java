@@ -26,6 +26,6 @@ public class Amenity {
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
-	@ManyToMany(mappedBy = "amenities")
+	@ManyToMany(mappedBy = "amenities") //this is unidirectional
 	private Set<PetPark> petParks = new HashSet<>();
 }

@@ -30,6 +30,6 @@ public class Contributor {
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
-	@OneToMany(mappedBy = "contributor", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "contributor", cascade = CascadeType.ALL) //this is unidirectional
 	private Set<PetPark> petParks = new HashSet<>();
 }

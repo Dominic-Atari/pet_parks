@@ -6,7 +6,7 @@ spring:
 
    jpa:
       hibernate:
-         ddl-auto: update #update or create#
+         ddl-auto: create #update or create#
       show-sql: true
       defer-datasource-initialization: true
 
