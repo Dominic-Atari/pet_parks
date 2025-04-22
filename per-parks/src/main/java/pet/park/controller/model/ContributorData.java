@@ -42,7 +42,8 @@ public class ContributorData {
 		private Contributor contributor;
 		private Set<String> amenities = new HashSet<>();
 
-		PetparkResponse(PetPark petPark) {
+		//added public in the constructor
+		public PetparkResponse(PetPark petPark) {
 			petParkId = petPark.getPetParkId();
 			parkName = petPark.getParkName();
 			directions = petPark.getDirections();

@@ -36,7 +36,7 @@ public class PetController {
 		return parkService.saveContributor(contributorData);
 
 	}
-
+ 
 	/* update contributor */
 
 	@PutMapping("/contributor/{contributorId}")
@@ -62,6 +62,8 @@ public class PetController {
 		return parkService.retrieveContributorById(contributorId);
 	}
 
+	//Delete by ID
+	
 	@DeleteMapping("/contributor/{contributorId}")
 	public Map<String, String> deleteContributorById(@PathVariable Long contributorId) {
 		log.info("Deleting contributor by ID={}", contributorId);
@@ -79,37 +81,39 @@ public class PetController {
 		throw new UnsupportedOperationException("Deleting all contributors is not allowed.");
 	}
 
+	//--------------------------------------------------------------------------------------------------------
 	// PET_PARK METHOD.
 
 	@PostMapping("/contributor/{contributorId}/park")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public PetParkData insertParkData(@PathVariable Long contributorId, @RequestBody PetParkData petParkData) {
+	public PetParkData insertPetPark(@PathVariable Long contributorId, @RequestBody PetParkData petParkData) {
 
-		log.info("Creating park {} for contributor with ID={}", petParkData, contributorId);
-
-		return parkService.savePetPark(contributorId, petParkData);
-
-	}
-	// PET_PARK METHOD.
-
-	@PutMapping("/contributor/{contributorId}/park/{parkId}")
-	public PetParkData updateParkData(@PathVariable Long contributorId, @PathVariable Long parkId,
-			@RequestBody PetParkData petParkData) {
-
-		petParkData.setPetParkId(parkId);
-
-		log.info("Creating park {} for contributor with ID={}", petParkData, contributorId);
+		log.info("Creating park {} for contributor with ID={}",  petParkData, contributorId);
 
 		return parkService.savePetPark(contributorId, petParkData);
 
 	}
 	
-	@GetMapping("/contributor/{contributorId}/park/{parkId}")
-	public PetParkData retrievePetParkById(@PathVariable Long contributorId,
-			@PathVariable Long parkId) {
-		log.info("Retrieving pet park with ID={} for contributor with ID={}",
-				parkId, contributorId);
-		
-		return parkService.retrievePetParkById(contributorId, parkId);
+	
+	// PET_PARK METHOD.
+
+	@PutMapping("/contributor/{contributorId}/park/{petParkId}")
+	public PetParkData updatePetParkData(@PathVariable Long contributorId, 
+			@PathVariable Long petParkId,
+			@RequestBody PetParkData petParkData) {
+
+		petParkData.setPetParkId(petParkId);
+
+		log.info("Creating park {} for contributor with ID={}", petParkData, contributorId);
+
+		return parkService.savePetPark(contributorId, petParkData);
+
+	}
+
+	@GetMapping("/contributor/{contributorId}/park/{petParkId}")
+	public PetParkData retrievePetParkById(@PathVariable Long contributorId, @PathVariable Long petParkId) {
+		log.info("Retrieving pet park with ID={} for contributor with ID={}", petParkId, contributorId);
+
+		return parkService.retrievePetParkById(contributorId, petParkId);
 	}
 }

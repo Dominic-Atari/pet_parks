@@ -173,13 +173,13 @@ public class ParkService {
 	}
 
 	@Transactional(readOnly = true)
-	public PetParkData retrievePetParkById(Long contributorId, Long parkId) {
+	public PetParkData retrievePetParkById(Long contributorId, Long petParkId) {
 		findContributorById(contributorId);
-		PetPark petPark = findPetParkById(parkId);
+		PetPark petPark = findPetParkById(petParkId);
 		
 		if(petPark.getContributor().getContributorId() != contributorId) {
 			throw new IllegalStateException("Pet park with ID= " 
-		+ parkId + "is not owned by contributor " 
+		+ petParkId + "is not owned by contributor " 
 					+ contributorId);
 		}
 		
