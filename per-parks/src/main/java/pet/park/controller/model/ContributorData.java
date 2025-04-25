@@ -34,7 +34,7 @@ public class ContributorData {
 	@NoArgsConstructor
 	static class PetparkResponse {
 		private Long petParkId;
-		private String parkName;
+		private String petParkName;
 		private String directions;
 		private String stateOrProvince;
 		private String country;
@@ -45,7 +45,7 @@ public class ContributorData {
 		//added public in the constructor
 		public PetparkResponse(PetPark petPark) {
 			petParkId = petPark.getPetParkId();
-			parkName = petPark.getParkName();
+			petParkName = petPark.getPetParkName();
 			directions = petPark.getDirections();
 			stateOrProvince = petPark.getStateOrProvince();
 			country = petPark.getCountry();

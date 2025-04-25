@@ -95,7 +95,7 @@ public class PetController {
 	}
 	
 	
-	// PET_PARK METHOD.
+	
 
 	@PutMapping("/contributor/{contributorId}/park/{petParkId}")
 	public PetParkData updatePetParkData(@PathVariable Long contributorId, 
@@ -104,7 +104,7 @@ public class PetController {
 
 		petParkData.setPetParkId(petParkId);
 
-		log.info("Creating park {} for contributor with ID={}", petParkData, contributorId);
+		log.info("Updating park {} for contributor with ID={}", petParkData, contributorId);
 
 		return parkService.savePetPark(contributorId, petParkData);
 

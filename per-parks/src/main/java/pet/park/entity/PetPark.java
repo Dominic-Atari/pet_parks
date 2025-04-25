@@ -1,11 +1,10 @@
 package pet.park.entity;
 
-
-
 import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,11 +21,13 @@ import lombok.ToString;
 @Entity
 @Data
 public class PetPark {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long petParkId;
-	private String parkName;
+	
+	@Column(name = "pet_park_name")
+	private String petParkName;
 	private String directions;
 	private String stateOrProvince;
 	private String country;
@@ -43,11 +44,8 @@ public class PetPark {
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@ManyToMany(cascade = CascadeType.PERSIST)
-	@JoinTable(name = "pet_park_amenity",          //this is unidirectional
-	joinColumns = @JoinColumn(name = "pet_park_id"),
-	inverseJoinColumns = @JoinColumn(name = "amenity_id" ))
+	@JoinTable(name = "pet_park_amenity", // this is unidirectional
+			joinColumns = @JoinColumn(name = "pet_park_id"), inverseJoinColumns = @JoinColumn(name = "amenity_id"))
 	private Set<Amenity> amenities = new HashSet<>();
 
-	
-	
 }

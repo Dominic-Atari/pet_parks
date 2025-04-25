@@ -15,7 +15,7 @@ import pet.park.entity.PetPark;
 public class PetParkData {
 	
 	private Long petParkId;
-	private String parkName;
+	private String petParkName;
 	private String directions;
 	private String stateOrProvince;
 	private String country;
@@ -25,7 +25,7 @@ public class PetParkData {
 	
 	public PetParkData(PetPark petPark) {
 		petParkId = petPark.getPetParkId();
-		parkName = petPark.getParkName();
+		petParkName = petPark.getPetParkName();
 		directions = petPark.getDirections();
 		stateOrProvince = petPark.getStateOrProvince();
 		country = petPark.getCountry();

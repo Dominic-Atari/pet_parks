@@ -145,11 +145,11 @@ public class ParkService {
 
 	private void setPetParkFields(PetPark petPark, PetParkData petParkData) {
 		petPark.setCountry(petParkData.getCountry());
-		petPark.setDirections(petPark.getDirections());
-		petPark.setGeoLocation(petPark.getGeoLocation());
-		petPark.setParkName(petPark.getParkName());
-		petPark.setPetParkId(petPark.getPetParkId());
-		petPark.setStateOrProvince(petPark.getStateOrProvince());
+		petPark.setDirections(petParkData.getDirections());
+		petPark.setGeoLocation(petParkData.getGeoLocation());
+		petPark.setPetParkName(petParkData.getPetParkName());
+		petPark.setPetParkId(petParkData.getPetParkId());
+		petPark.setStateOrProvince(petParkData.getStateOrProvince());
 	
 	}
 
